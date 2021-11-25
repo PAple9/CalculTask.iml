@@ -8,6 +8,8 @@ public class Calculator {
         try {
             a = Integer.parseInt(parts[0]);
             b = Integer.parseInt(parts[2]);
+            if (a < 1 || a > 10 || b < 1 || b > 10)
+                throw new Exception("Калькулятор должен принимать на вход числа от 1 до 10 включительно, не более.");
             arab = true;
         } catch (NumberFormatException e) {
             a = Converter.RimToArab(parts[0]);
